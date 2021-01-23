@@ -1,6 +1,5 @@
-package code {
-package snippet {
-
+package com.chat.snippet
+/*
 import org.specs._
 import org.specs.runner.JUnit4
 import org.specs.runner.ConsoleRunner
@@ -12,9 +11,14 @@ import org.specs.matcher._
 import org.specs.specification._
 import Helpers._
 import lib._
+*/
+import org.junit.runner.RunWith
+import org.scalatest.junit.JUnitRunner
+import org.scalatest._
+import net.liftweb.common._
 
-
-class HelloWorldTestSpecsAsTest extends JUnit4(HelloWorldTestSpecs)
+/*
+class HelloWorldTestSpecsAsTest extends FlatSpec with ShouldMatchers(HelloWorldTestSpecs)
 object HelloWorldTestSpecsRunner extends ConsoleRunner(HelloWorldTestSpecs)
 
 object HelloWorldTestSpecs extends Specification {
@@ -41,6 +45,4 @@ object HelloWorldTestSpecs extends Specification {
     }
   }
 }
-
-}
-}
+*/

@@ -1,20 +1,21 @@
-package code
+package com.chat
+
 
 import java.io.File
-
 import scala.xml.XML
-
-import org.specs.Specification
-import org.specs.runner.JUnit4
-
-import net.liftweb.common.Full
 import net.liftweb.util.PCDataXmlParser
+import org.junit.runner.RunWith
+import org.scalatest.junit.JUnitRunner
+import org.scalatest._
+import net.liftweb.common._
 
-class XmlSourceSpecsTest extends JUnit4(XmlSourceSpecs)
 
-object XmlSourceSpecs extends Specification {
+object XmlSourceSpecs extends FlatSpec
+	with ShouldMatchers
+	/*with ModelFixtures*/
+	/*with GBFixtures*/ {
 
-  "XML Sources" should {
+  "XML Sources" should
     "be well-formed" in {
       /**
        * Tests to make sure the project's XML files are well-formed.
@@ -53,12 +54,12 @@ object XmlSourceSpecs extends Specification {
       
       val numFails = failed.size
       if (numFails > 0) {
-	val fileStr = if (numFails == 1) "file" else "files"
-	val msg = "Malformed XML in " + numFails + " " + fileStr + ": " + failed.mkString(", ")
-	fail(msg)
+					val fileStr = if (numFails == 1) "file" else "files"
+					val msg = "Malformed XML in " + numFails + " " + fileStr + ": " + failed.mkString(", ")
+					fail(msg)
       }
       
-      numFails must_== 0
+      numFails should  equal( 0 )
     }
-  }
+
 }

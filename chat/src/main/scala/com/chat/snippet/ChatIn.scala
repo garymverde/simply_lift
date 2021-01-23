@@ -1,14 +1,8 @@
-package code
-package snippet
+package com.chat.snippet
 
-import net.liftweb._
-import http._
-import js._
-import JsCmds._
-import JE._
-
-import comet.ChatServer
-
+import com.chat.comet.ChatServer
+import net.liftweb.http.SHtml
+import net.liftweb.http.js.JsCmds._
 /**
  * A snippet transforms input to output... it transforms
  * templates to dynamic content.  Lift's templates can invoke

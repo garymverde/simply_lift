@@ -1,5 +1,4 @@
-package code
-package comet
+package com.chat.comet
 
 import net.liftweb._
 import http._
